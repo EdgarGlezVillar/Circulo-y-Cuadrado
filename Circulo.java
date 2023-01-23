@@ -2,9 +2,10 @@ package CUADRADOPCKG;
 
 public class Circulo {
 double radio;
-double cricunferencia;
-double area;
-public Circulo(double radio) {
+Circulo(){
+	this(170142);
+}
+ Circulo(double radio) {
 	this.radio = radio;
 }
 public double calcularCircunferencia() {

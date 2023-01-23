@@ -2,11 +2,11 @@ package CUADRADOPCKG;
 
 public class Cuadrado {
 public double lado;
-public double diagonal;
-public double area;
-public double perimetro;
-public Cuadrado(double a) {
-	this.lado = a;
+Cuadrado(){
+	this(170142);
+}
+Cuadrado(double lado) {
+	this.lado = lado;
 }
 public double calcularDiagonal() {
 	return Math.sqrt(Math.pow(lado,2) + Math.pow(lado,2));
