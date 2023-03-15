@@ -1,11 +1,19 @@
 package ObjectCreatorPckg;
 import java.util.Random;
+import java.io.File;
 import java.util.Scanner;
 
 public class MainObjectCreator {
 
 	public static void main(String[] args) 
 	{
+		
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Ingresa tu nombre de Usuario: ");
+        String nombre = scan.nextLine();
+		Menu menu = new Menu(nombre);
+		
+		
 		//arreglo de nombres
 		String[] nombres = {"Edgar", "Andrés", "Mateo", "Pablo", "Luis", "Víctor", "Tomás"};
 		//crear objeto
@@ -100,7 +108,6 @@ public class MainObjectCreator {
 		
 		char[] preguntas = new char[4];
 		
-		Scanner scan = new Scanner(System.in);
 		
 		
 		System.out.println("Cuál es tu primera pregunta?");
@@ -271,6 +278,7 @@ public class MainObjectCreator {
 	        System.out.println("Ágil:" + posiblesQuien[a].getAgil());
 		}
 		
+		boolean ganar = true;
 		System.out.println();
 		System.out.println("Escribe el índice de la persona que crees que es la incógnita: ");
 		int eleccion = scan.nextInt();
@@ -284,6 +292,10 @@ public class MainObjectCreator {
 		{
 			System.out.println();
 			System.out.println("Perdiste!");
+			ganar = false;
 		}
+		
+		menu.sumarEstadisticas(ganar);
+		
 	}//main
 }
